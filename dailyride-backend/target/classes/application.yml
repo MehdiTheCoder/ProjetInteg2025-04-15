@@ -1,0 +1,33 @@
+spring:
+  main:
+    allow-circular-references: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: tomobilti
+      auto-index-creation: false
+      authentication-database: admin
+  mongodb:
+    embedded:
+      version: 4.0.21
+
+server:
+  port: 8083
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: never
+    include-exception: false
+
+jwt:
+  secret: your-secret-key-here-make-it-long-and-secure-in-production
+  expiration: 86400000 # 24 hours in milliseconds
+
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
+    com.dailyride: DEBUG
+    org.springframework.data.mongodb: DEBUG
+    org.springframework.web: DEBUG 
